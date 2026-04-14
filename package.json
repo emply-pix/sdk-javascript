@@ -1,0 +1,65 @@
+{
+  "name": "@emply/sdk",
+  "version": "1.0.0",
+  "description": "Official JavaScript/TypeScript SDK for the Emply payment API",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./webhook": {
+      "import": {
+        "types": "./dist/utils/webhook-verify.d.ts",
+        "default": "./dist/utils/webhook-verify.js"
+      },
+      "require": {
+        "types": "./dist/utils/webhook-verify.d.cts",
+        "default": "./dist/utils/webhook-verify.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "tsconfig.json",
+    "tsup.config.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "prepare": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "emply",
+    "pix",
+    "payment",
+    "brazil",
+    "fintech",
+    "sdk",
+    "api"
+  ],
+  "author": "Emply <dev@emply.com.br>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0"
+  }
+}
